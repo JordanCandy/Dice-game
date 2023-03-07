@@ -1,11 +1,19 @@
-var randomNumber1 = Math.floor(Math.random() * 6) + 1;
-var randomDiceImage = "dice" + randomNumber1 + ".png";
- var randomImageSource = "images/" + randomDiceImage;
+ $(document).keydown(function(event){
+   var key = event.which;
 
- var image1 = $(".img1");
+   if(key == 13){
+      call();
+   }
+ });
 
- image1.attr("src", randomImageSource);
-
+ function call(){
+   var randomNumber1 = Math.floor(Math.random() * 6) + 1;
+   var randomDiceImage = "dice" + randomNumber1 + ".png";
+    var randomImageSource = "images/" + randomDiceImage;
+   
+    var image1 = $(".img1");
+   
+    image1.attr("src", randomImageSource);
 
  var randomNumber2 = Math.floor(Math.random() * 6) + 1;
  var randomImageSource2 = "images/dice" + randomNumber2 + ".png";
@@ -22,3 +30,4 @@ var randomDiceImage = "dice" + randomNumber1 + ".png";
  else{
 $("h1").text("Draw!");
  }
+}
